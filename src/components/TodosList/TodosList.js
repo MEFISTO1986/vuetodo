@@ -34,8 +34,15 @@ export default {
 	},
 	methods: {
 		removeTodo: function(index) {
-			console.log(index)
 			this.$delete(this.todos, index)
+		},
+
+		addTodo: function(todo) {
+			this.todos.push({
+				id: this.todos.length + 1,
+				name: document.querySelector(".todo-list-input").value,
+				completed: false
+			})
 		}
 	},
 	components: {
